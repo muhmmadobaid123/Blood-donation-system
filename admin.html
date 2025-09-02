@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Admin Dashboard</h2>
+        <a href="/view-requests" class="btn btn-info">View Requests</a>
+        <a href="/view-donors" class="btn btn-success">View Donors</a>
+        <a href="/view-stock" class="btn btn-warning">View Blood Stock</a>
+        <a href="/logout" class="btn btn-secondary">Logout</a>
+    </div>
+    <!-- Manage Blood Stock -->
+    <div class="mt-5">
+        <h4 class="text-secondary mx-5">Manage Blood Stock</h4>
+        <form action="/update-stock" method="POST" class="row g-3">
+            <div class="col-1"></div>
+            <div class="col-md-3">
+                <label for="blood_group" class="form-label">Blood Group</label>
+                <select id="blood_group" name="blood_group" class="form-select" required>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="units" class="form-label">Units</label>
+                <input type="number" class="form-control" id="units" name="units" placeholder="10" required>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label d-block">Action</label>
+                <button type="submit" name="action" value="add" class="btn btn-success">Add New Group</button>
+                <button type="submit" name="action" value="update" class="btn btn-primary ms-2">Update Units</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
